@@ -1,0 +1,44 @@
+{
+  "capabilities": {
+    "hipchatApiConsumer": {
+      "scopes": [
+        "send_notification"
+      ]
+    },
+    "links": {
+        "self": "https://askgreg.herokuapp.com/askgreg/atlassian-connect.json",
+        "homepage": "https://askgreg.herokuapp.com/askgreg/atlassian-connect.json"
+    },
+    "capabilities": {
+        "hipchatApiConsumer": {
+            "scopes": [
+                "send_notification"
+            ]
+        },
+        "installable": {
+            "callbackUrl": "https://askgreg.herokuapp.com/askgreg/installable"
+        },
+        "configurable": {
+             "url": "https://askgreg.herokuapp.com/askgreg/config"
+        }
+    },
+    "installable": {
+      "allowGlobal": false,
+      "allowRoom": true
+    },
+    "webhook": [
+      {
+        "event": "room_message",
+        "pattern": "^\\/([Aa][Ss][Kk][Gg][Rr][Ee][Gg])",
+        "url": "https://askgreg.herokuapp.com/askgreg"
+      }
+    ]
+  },
+  "description": "Let Greg tell you a pun",
+  "key": "com.terrymooreii.hipchat.askgreg",
+  "name": "Ask Greg",
+  "vendor": {
+    "name": "Terry Moore II",
+    "url": "http://www.terrymooreii.com"
+  }
+}
