@@ -5,7 +5,7 @@ const Hapi = require('hapi');
 // Create a server with a host and port
 const server = new Hapi.Server();
 server.connection({
-    port: process.env.port || 5001
+    port: process.env.PORT || 5000
 });
 
 // Add the route
