@@ -34,6 +34,8 @@
       }
     ]
   },
+  "baseUrl": "https://askgreg.herokuapp.com/askgreg",
+  "authentication":"jwt",
   "description": "Let Greg tell you a pun",
   "key": "com.terrymooreii.hipchat.askgreg",
   "name": "Ask Greg",
