@@ -1,0 +1,25 @@
+{
+  "name": "askgreg",
+  "version": "1.0.0",
+  "description": "Ask Greg is Punny",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TerryMooreII/askgreg.git"
+  },
+  "keywords": [
+    "puns"
+  ],
+  "author": "Terry Moore II",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TerryMooreII/askgreg/issues"
+  },
+  "homepage": "https://github.com/TerryMooreII/askgreg#readme",
+  "dependencies": {
+    "hapi": "^13.0.0"
+  }
+}
