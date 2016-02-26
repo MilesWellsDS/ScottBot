@@ -1,6 +1,6 @@
 # Ask Greg
 
-Hip Chat Pun bottom
+Hip Chat Pun bot
 
 /askgreg
 
