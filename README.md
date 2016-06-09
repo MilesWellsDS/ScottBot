@@ -6,11 +6,11 @@ Hip Chat Business Language Bot
 
 Scott Says: <something about synergy>
 
+
 /askscottstories
 
 Scott will assign your squad some stories with storypoints already built in!
 
-etc
 
 /askscottspeech
 
