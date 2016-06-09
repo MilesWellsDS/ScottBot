@@ -57,7 +57,7 @@ function getBusinessString() {
 function getTodoList() {
     var numitems = Math.floor(Math.random() * 3) + 3; //Random number of items between 3-5
     var Scott = 'Scott would like you to integrate these dynamic opportunities:\n';
-    for(var i = 0; i < numItems; i++) {
+    for(var i = 0; i < numitems; i++) {
         Scott += (i + 1) + ') ' + buildBusinessString() + '.\n';
     }
 
