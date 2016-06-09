@@ -29,7 +29,7 @@ server.route({
 // Add the route for a to do list
 server.route({
     method: 'POST',
-    path:'/scottbot',
+    path:'/scottbottodo',
     handler: function (request, reply) {
         return reply({
             "color": "green",
