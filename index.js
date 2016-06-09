@@ -29,7 +29,7 @@ server.route({
 // Add the route for a to do list
 server.route({
     method: 'POST',
-    path:'/scottbottodo',
+    path:'/scottbotstory',
     handler: function (request, reply) {
         return reply({
             "color": "green",
@@ -55,12 +55,14 @@ function getBusinessString() {
     return Scott;
 }
 
-//get a list of 3-5 business language strings.
+//get a list of 3-5 business language strings as stories with story points
 function getTodoList() {
     var numitems = Math.floor(Math.random() * 3) + 3; //Random number of items between 3-5
-    var Scott = 'Scott would like you to integrate these dynamic opportunities:\n';
+    var storyPoints = ['1/2', '1', '2', '3', '5', '8']; //Array of possible story points
+    var Scott = 'Scott has assigned some stories to your squad:\n';
+    //for each story, build a business string for it and assign a story point value for it
     for(var i = 0; i < numitems; i++) {
-        Scott += (i + 1) + ') ' + buildBusinessString(true) + '.\n';
+        Scott += (i + 1) + ') ' + buildBusinessString(true) + '. (' + storyPoints[Math.floor(Math.random() * storyPoints.length)] + ')\n';
     }
 
     return Scott;
