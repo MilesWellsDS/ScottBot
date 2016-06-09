@@ -14,9 +14,10 @@ server.connection({
     port: process.env.PORT || 5000
 });
 
+//10% chance of insulting whoever is requesting scottbot
 server.ext('onPreHandler', function(request, reply) {
     var odds = Math.random() * 100;
-    if(odds <= 10) {
+    if(odds <= 5) {
         return reply(getInsult(request, odds));
     }
     return reply.continue();
@@ -74,10 +75,11 @@ server.start((err) => {
     console.log('Server running at:', server.info.uri);
 });
 
+//gets an insult to the user requesting scottbot
 function getInsult(request, odds) {
     var name = request.payload.item.message.from.name;
     var message = "Scott says: ";
-    if(odds <= 5)
+    if(odds <= 2.5)
         message += 'Get back to work, ' + name + '!';
     else
         message += 'Step off, ' + name + '!';
