@@ -14,17 +14,27 @@ server.connection({
     port: process.env.PORT || 5000
 });
 
+server.ext('onPreHandler', function(request, reply) {
+    var odds = Math.random() * 100;
+    if(odds <= 10) {
+        return reply(getInsult(request, odds));
+    }
+    return reply.continue();
+});
+
 // Add the route for a simple phrase
 server.route({
     method: 'POST',
     path:'/scottbot',
-    handler: function (request, reply) {
-      return reply({
-          "color": "green",
-          "message": getBusinessString(),
-          "notify": false,
-          "message_format": "text"
-      });
+    config: {
+        handler: function (request, reply) {
+            return reply({
+                "color": "green",
+                "message": getBusinessString(),
+                "notify": false,
+                "message_format": "text"
+            });
+        }
     }
 });
 
@@ -63,6 +73,22 @@ server.start((err) => {
     }
     console.log('Server running at:', server.info.uri);
 });
+
+function getInsult(request, odds) {
+    var name = request.payload.item.message.from.name;
+    var message = "Scott says: ";
+    if(odds <= 5)
+        message += 'Get back to work, ' + name + '!';
+    else
+        message += 'Step off, ' + name + '!';
+
+    return {
+        "color": "green",
+        "message": message,
+        "notify": false,
+        "message_format": "text"
+    };
+}
 
 //get a business language string
 function getBusinessString() {
