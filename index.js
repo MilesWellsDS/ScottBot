@@ -19,10 +19,9 @@ server.route({
     method: 'POST',
     path:'/scottbot',
     handler: function (request, reply) {
-        console.log(request.payload.item.message.from.name);
       return reply({
           "color": "green",
-          "message": request.payload.item.message.from.name,//getBusinessString(),
+          "message": getBusinessString(),
           "notify": false,
           "message_format": "text"
       });
