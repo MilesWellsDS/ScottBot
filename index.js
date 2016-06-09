@@ -79,7 +79,7 @@ function getTodoList() {
 
     //for each story, build a business string for it and assign a story point value for it
     for(var i = 0; i < numitems; i++) {
-        Scott += (i + 1) + ') ' + buildBusinessString(true, false) + '. (' + storyPoints[Math.floor(Math.random() * storyPoints.length)] + ')\n';
+        Scott += (i + 1) + ') ' + buildBusinessString(true, false) + '. ( ' + storyPoints[Math.floor(Math.random() * storyPoints.length)] + ' )\n';
     }
 
     return Scott;
