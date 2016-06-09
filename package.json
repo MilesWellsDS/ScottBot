@@ -1,7 +1,7 @@
 {
-  "name": "askgreg",
+  "name": "scottbot",
   "version": "1.0.0",
-  "description": "Ask Greg is Punny",
+  "description": "ScottBot creates dialogues",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -9,17 +9,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TerryMooreII/askgreg.git"
+    "url": "git+https://github.com/MilesWellsDS/ScottBot.git"
   },
   "keywords": [
-    "puns"
+    "business language"
   ],
-  "author": "Terry Moore II",
+  "author": "Miles Wells - Terry Moore II",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TerryMooreII/askgreg/issues"
+    "url": "+https://github.com/MilesWellsDS/ScottBot/issues"
   },
-  "homepage": "https://github.com/TerryMooreII/askgreg#readme",
+  "homepage": "+https://github.com/MilesWellsDS/ScottBot#readme",
   "dependencies": {
     "hapi": "^13.0.0"
   },

@@ -6,8 +6,8 @@
       ]
     },
     "links": {
-        "self": "https://askgreg.herokuapp.com/askgreg/atlassian-connect.json",
-        "homepage": "https://askgreg.herokuapp.com/askgreg/atlassian-connect.json"
+        "self": "https://scottbot.herokuapp.com/scottbot/atlassian-connect.json",
+        "homepage": "https://scottbot.herokuapp.com/scottbot/atlassian-connect.json"
     },
     "capabilities": {
         "hipchatApiConsumer": {
@@ -16,10 +16,10 @@
             ]
         },
         "installable": {
-            "callbackUrl": "https://askgreg.herokuapp.com/askgreg/installable"
+            "callbackUrl": "https://scottbot.herokuapp.com/scottbot/installable"
         },
         "configurable": {
-             "url": "https://askgreg.herokuapp.com/askgreg/config"
+             "url": "https://scottbot.herokuapp.com/scottbot/config"
         }
     },
     "installable": {
@@ -30,16 +30,16 @@
       {
         "event": "room_message",
         "pattern": "^\\/([Aa][Ss][Kk][Gg][Rr][Ee][Gg])",
-        "url": "https://askgreg.herokuapp.com/askgreg"
+        "url": "https://scottbot.herokuapp.com/scottbot"
       }
     ]
   },
-  "baseUrl": "https://askgreg.herokuapp.com/askgreg",
+  "baseUrl": "https://scottbot.herokuapp.com/scottbot",
   "authentication": {
     "type": "jwt"
   },
-  "description": "Let Greg tell you a pun",
-  "key": "com.terrymooreii.hipchat.askgreg",
+  "description": "Let Scott Dialog With You",
+  "key": "com.terrymooreii.hipchat.scottbot",
   "name": "Ask Greg",
   "vendor": {
     "name": "Terry Moore II",

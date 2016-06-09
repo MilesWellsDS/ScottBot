@@ -1,9 +1,9 @@
-# Ask Greg
+# Scott Bot
 
-Hip Chat Pun bot
+Hip Chat Business Language Bot
 
-/askgreg
+/askscott
 
-Greg Says: <Random Pun>
+Scott Says: <something about synergy>
 
-`POST` to `https://askgreg.herokuapp.com/askgreg`
+`POST` to `https://ds-scottbot.herokuapp.com/ScottBot`
