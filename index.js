@@ -35,10 +35,10 @@ server.start((err) => {
 });
 
 function getBusinessString(){
-    var phrase = ''; //instantiate phrase
+    var phrase = 'Scott says to '; //instantiate phrase
     phrase += adverbs[Math.floor(Math.random() * adverbs.length) + 1] + ' '; //add adverb and space to phrase
     phrase += verbs[Math.floor(Math.random() * verbs.length) + 1] + ' '; //add verb and space to phrase
     phrase += adjectives[Math.floor(Math.random() * adjectives.length) + 1] + ' '; //add adjective and space to phrase
-    phrase += nouns[Math.floor(Math.random() * nouns.length) + 1]; //add noun to phrase
+    phrase += nouns[Math.floor(Math.random() * nouns.length) + 1] + '.'; //add noun and period to phrase
     return phrase;
 }
