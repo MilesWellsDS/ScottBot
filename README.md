@@ -8,11 +8,7 @@ Scott Says: <something about synergy>
 
 /askscottstories
 
-Scott has assigned some(3-5) stories to your squad:
-
-#) <business lingo>
-
-#) <business lingo>
+Scott will assign your squad some stories with storypoints already built in!
 
 etc
 
