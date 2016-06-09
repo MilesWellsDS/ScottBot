@@ -1,7 +1,10 @@
 'use strict';
 
 const Hapi = require('hapi');
-const puns = require('./puns');
+const adjectives = require('./words/adjectives');
+const adverbs = require('./words/adverbs');
+const nouns = require('./words/nouns');
+const verbs = require('./words/verbs');
 
 // Create a server with a host and port
 const server = new Hapi.Server();
@@ -12,11 +15,11 @@ server.connection({
 // Add the route
 server.route({
     method: 'POST',
-    path:'/askgreg',
+    path:'/scottbot',
     handler: function (request, reply) {
       return reply({
           "color": "green",
-          "message": getPun(),
+          "message": getBusinessString(),
           "notify": false,
           "message_format": "text"
       });
@@ -31,7 +34,11 @@ server.start((err) => {
     console.log('Server running at:', server.info.uri);
 });
 
-function getPun(){
-   var index = Math.floor(Math.random() * puns.length) + 1;
-   return puns[index];
+function getBusinessString(){
+    var phrase = ''; //instantiate phrase
+    phrase += adverbs[Math.floor(Math.random() * adverbs.length) + 1] + ' '; //add adverb and space to phrase
+    phrase += verbs[Math.floor(Math.random() * verbs.length) + 1] + ' '; //add verb and space to phrase
+    phrase += adjectives[Math.floor(Math.random() * adjectives.length) + 1] + ' '; //add adjective and space to phrase
+    phrase += nouns[Math.floor(Math.random() * nouns.length) + 1]; //add noun to phrase
+    return phrase;
 }

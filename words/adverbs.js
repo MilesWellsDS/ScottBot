@@ -1,0 +1,37 @@
+/**
+ * Created by miles.wells on 6/9/2016.
+ */
+module.exports = [
+    'appropriately',
+    'assertively',
+    'authoritatively',
+    'collaboratively',
+    'compellingly',
+    'competently',
+    'completely',
+    'continually',
+    'conveniently',
+    'credibly',
+    'distinctively',
+    'dramatically',
+    'dynamically',
+    'efficiently',
+    'energistically',
+    'enthusiastically',
+    'fungibly',
+    'globally',
+    'holisticly',
+    'interactively',
+    'intrinsically',
+    'monotonectally',
+    'objectively',
+    'phosfluorescently',
+    'proactively',
+    'professionally',
+    'progressively',
+    'quickly',
+    'rapidiously',
+    'seamlessly',
+    'synergistically',
+    'uniquely'
+];
