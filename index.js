@@ -17,7 +17,7 @@ server.connection({
 //10% chance of insulting whoever is requesting scottbot
 server.ext('onPreHandler', function(request, reply) {
     var odds = Math.random() * 100;
-    if(odds <= 5) {
+    if(odds <= 10) {
         return reply(getInsult(request, odds));
     }
     return reply.continue();
@@ -79,7 +79,7 @@ server.start((err) => {
 function getInsult(request, odds) {
     var name = request.payload.item.message.from.name;
     var message = "Scott says: ";
-    if(odds <= 2.5)
+    if(odds <= 5)
         message += 'Get back to work, ' + name + '!';
     else
         message += 'Step off, ' + name + '!';
@@ -113,6 +113,7 @@ function getTodoList() {
     return Scott;
 }
 
+//builds a paragraph of business language using groupings.js
 function getParagraph() {
     var Scott = '';
     var numsentences = Math.floor(Math.random() * 3) + 3; //random number of sentences between 3-5
