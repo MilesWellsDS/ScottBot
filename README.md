@@ -4,18 +4,20 @@ Hip Chat Business Language Bot
 
 /askscott
 
-Scott Says: <something about synergy>
-
+Scott will tell you something about synergy!
 
 /askscottstories
 
 Scott will assign your squad some stories with storypoints already built in!
 
-
 /askscottspeech
 
-Scott will produce a potentially motivational speech full of business jargon.
+Scott will produce a potentially motivational speech full of business jargon!
 
-`POST` to `https://ds-scottbot.herokuapp.com/scottbot`
-          `https://ds-scottbot.herokuapp.com/scottbotstories`
-          `https://ds-scottbot.herokuapp.com/scottbotspeech`
+API Endpoints:
+
+`https://ds-scottbot.herokuapp.com/scottbot`
+
+`https://ds-scottbot.herokuapp.com/scottbotstories`
+          
+`https://ds-scottbot.herokuapp.com/scottbotspeech`
