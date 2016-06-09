@@ -66,9 +66,9 @@ function getTodoList() {
 
 function buildBusinessString() {
     var str = '';
-    str += adverbs[Math.floor(Math.random() * adverbs.length) + 1] + ' '; //add adverb and space to phrase
-    str += verbs[Math.floor(Math.random() * verbs.length) + 1] + ' '; //add verb and space to phrase
-    str += adjectives[Math.floor(Math.random() * adjectives.length) + 1] + ' '; //add adjective and space to phrase
-    str += nouns[Math.floor(Math.random() * nouns.length) + 1]; //add noun to phrase
+    str += adverbs[Math.floor(Math.random() * adverbs.length)] + ' '; //add adverb and space to phrase
+    str += verbs[Math.floor(Math.random() * verbs.length)] + ' '; //add verb and space to phrase
+    str += adjectives[Math.floor(Math.random() * adjectives.length)] + ' '; //add adjective and space to phrase
+    str += nouns[Math.floor(Math.random() * nouns.length)]; //add noun to phrase
     return str;
 }
