@@ -7,6 +7,7 @@ const nouns = require('./words/nouns');
 const verbs = require('./words/verbs');
 const ingverbs = require('./words/ingverbs');
 const groupings = require('./words/groupings');
+const insultChance = 10;
 
 // Create a server with a host and port
 const server = new Hapi.Server();
@@ -17,53 +18,55 @@ server.connection({
 //10% chance of insulting whoever is requesting scottbot
 server.ext('onPreHandler', function(request, reply) {
     var odds = Math.random() * 100;
-    if(odds <= 10) {
-        return reply(getInsult(request, odds));
+    if(odds <= insultChance) {
+        //return reply(getInsult(request, odds));
+        return reply({
+            "color": "green",
+            "message": getInsult(request, odds),
+            "notify": false,
+            "message_format": "text"
+        });
     }
     return reply.continue();
 });
 
-// Add the route for a simple phrase
+// Add the route
 server.route({
     method: 'POST',
     path:'/scottbot',
     config: {
         handler: function (request, reply) {
+            var requestMessage = request.payload.item.message.message; //get user command from payload
+            var replyMessage = '';
+
+            //if user sent "/askscott <command>" we need to handle it
+            if(requestMessage.split('/askscott ').length > 1) {
+                var command = requestMessage.split('/askscott ')[1]; //pull command from message
+                switch(command) {
+                    case "stories":
+                        replyMessage = getTodoList(); //command for user stories
+                        break;
+                    case "speech":
+                        replyMessage = getParagraph(); //command to get a paradigm shifting speech
+                        break;
+                    case "insult":
+                        replyMessage = getInsult(request, Math.random() * insultChance); //command to get an insult
+                        break;
+                    default:
+                        replyMessage = getBusinessString(); //unrecognized command, just send regular business string
+                        break;
+                }
+            } else {
+                replyMessage = getBusinessString(); //no extra command, just send a regular business string
+            }
+
             return reply({
                 "color": "green",
-                "message": getBusinessString(),
+                "message": replyMessage,
                 "notify": false,
                 "message_format": "text"
             });
         }
-    }
-});
-
-// Add the route for a to do list
-server.route({
-    method: 'POST',
-    path:'/scottbotstories',
-    handler: function (request, reply) {
-        return reply({
-            "color": "green",
-            "message": getTodoList(),
-            "notify": false,
-            "message_format": "text"
-        });
-    }
-});
-
-// Add the route for a full paragraph
-server.route({
-    method: 'POST',
-    path:'/scottbotspeech',
-    handler: function (request, reply) {
-        return reply({
-            "color": "green",
-            "message": getParagraph(),
-            "notify": false,
-            "message_format": "text"
-        });
     }
 });
 
@@ -79,17 +82,12 @@ server.start((err) => {
 function getInsult(request, odds) {
     var name = request.payload.item.message.from.name;
     var message = "Scott says: ";
-    if(odds <= 5)
+    if(odds <= insultChance/2)
         message += 'Get back to work, ' + name + '!';
     else
         message += 'Step off, ' + name + '!';
 
-    return {
-        "color": "green",
-        "message": message,
-        "notify": false,
-        "message_format": "text"
-    };
+    return message;
 }
 
 //get a business language string
